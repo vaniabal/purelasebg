@@ -1,0 +1,77 @@
+.header-black {
+    background-color: transparent;
+    color: #ffffff;
+    border-bottom: 1px solid rgba(255,255,255,.15);
+    min-height: 50px;
+}
+
+.header-white {
+    /* background-color: #ffffff; */
+    color: #000000;
+}
+
+.nav-link-style {
+    color: inherit;
+    font-size: 1.3rem;
+}
+
+
+
+.site-logo {
+    width: 125px;
+}
+
+@media only screen and (min-width: 768px) {
+    .site-logo {
+        width: 200px;
+    }
+}
+
+
+
+
+.menu-icon-phone-animation {
+    animation: phoneShake 0.08s 0.1s ease 7;
+
+}
+
+
+.header-social {
+    display: flex;
+    justify-content: flex-end;
+    list-style-type: none;
+    position: absolute;
+    z-index: 1000;
+    right: 2.5%;
+    left: 0;
+    top: 5px;
+    padding: 0 1em;
+}
+
+.header-social-item {
+    font-size: 1rem;
+    padding-left: 1em;
+    cursor: pointer;
+}
+
+.menu-icon,
+.header-social-item a {
+    color: #ffffff;
+}
+
+
+/* Animations */
+
+@keyframes phoneShake {
+    0% {
+        transform: translateX(0);
+    }
+
+    50% {
+        transform: translateX(-1);
+    }
+
+    100% {
+        transform: translateX(2px);
+    }
+}

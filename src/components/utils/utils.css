@@ -1,0 +1,40 @@
+.title-wrapper {
+    margin: 3rem 0;
+}
+
+.subtitle {
+    letter-spacing: 0.2rem;
+    color: var(--primary);
+    font-size: 1.25em;
+    text-transform: capitalize;
+}
+
+.title {
+    font-family: 'Roboto', sans-serif;
+    letter-spacing: 0.5rem;
+    font-size: 2rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    color: var(--secondary);
+}
+
+.underline {
+    width: 6em;
+    height: 0.2em;
+    background: var(--secondary);
+    margin: 0.75em auto;
+}
+
+@media screen and (min-width: 768px) {
+    .title-wrapper {
+        margin: 5rem 0;
+    }
+
+    .title {
+        font-size: 2.5rem
+    }
+
+    .subtitle {
+        font-size: 2rem;
+    }
+}

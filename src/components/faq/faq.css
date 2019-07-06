@@ -1,0 +1,47 @@
+.faq-container {
+	width: 100%;
+}
+@media only screen and (min-width: 774px) {
+    .faq-container {
+        margin: 0 auto;
+		max-width: 800px;
+		background-color: #f9f9f9;
+    }
+}
+
+.card {
+	margin-bottom: 10px;
+}
+.card-header {
+	border-radius: 3px;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+	border-color: #ddd;
+	background-color: #fff;
+	border-bottom: none;
+	padding-bottom: 10px;
+}
+
+.card-header h4{
+	font-size: 16px;
+	padding-top: 5px;
+}
+
+.card-header a {
+	display: block;
+	color: #777;
+}
+
+.card-body {
+	padding: 30px;
+	line-height: 1.6 !important;
+	border-top: 1px solid #ddd;
+}
+
+.card-header a .indicator {
+	color: #e04f67;
+}
+
+.card-header a:hover .indicator {
+	color: #333;
+}
