@@ -4,8 +4,8 @@ import { Link } from "gatsby"
 const links = [
   {
     id: 1,
-    path: "/advantages",
-    text: "предимства",
+    path: "/",
+    text: "начало",
   },
   { id: 2, path: "/prices", text: "цени" },
   { id: 3, path: "/gallery", text: "галерия" },
