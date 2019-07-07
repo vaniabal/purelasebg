@@ -6,10 +6,7 @@ import Faq from "../components/faq"
 
 const FaqPage = ({ uri }) => (
   <Layout path={uri}>
-    <SEO
-      title="Често задавани въпроси"
-      keywords={[`снимки`, `видео`, `галерия`]}
-    />
+    <SEO title="За контакти" keywords={[`снимки`, `видео`, `галерия`]} />
     <Faq />
   </Layout>
 )

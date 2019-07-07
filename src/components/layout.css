@@ -2,6 +2,8 @@
   --primary: rgb(0, 0, 0);
   --white: rgb(255, 255, 255);
   --secondary: #d1af66;
+  --large: 1200px;
+  --medium: 774px;
 }
 
 body {
