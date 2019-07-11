@@ -13,17 +13,17 @@
   display: block;
   width: 100%;
   height: 100%;
-  margin: 8px;
+  /* margin: 8px; */
   opacity: 1;
   transition: all 0.3s ease 0s;
   overflow: hidden;
   border-radius: 3px;
 }
-.image-background:hover {
+.image-wrapper:hover .image-background {
   background-color: #000;
 }
 
-.image-background:hover .gallery-image {
+.image-wrapper:hover .gallery-image {
   transform: scale(1.1, 1.1);
   transition: all 0.3s ease;
   opacity: 0.15;
@@ -40,6 +40,7 @@
   left: 0;
   right: 0;
   text-align: center;
+  cursor: url(./pointer.png), pointer;
 }
 
 .image-text h3 {
