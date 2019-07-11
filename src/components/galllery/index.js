@@ -11,7 +11,7 @@ const query = graphql`
       edges {
         node {
           childImageSharp {
-            fluid(maxWidth: 1200) {
+            fluid(maxHeight: 500) {
               originalName
               ...GatsbyImageSharpFluid_tracedSVG
             }

@@ -1,20 +1,85 @@
 .image-wrapper {
-    padding: 0;
+  padding: 0;
+  position: relative;
+}
+
+.gallery-image {
+  max-height: 500px;
+  height: 100%;
+}
+
+/* create black color on hover */
+.image-background {
+  display: block;
+  width: 100%;
+  height: 100%;
+  margin: 8px;
+  opacity: 1;
+  transition: all 0.3s ease 0s;
+  overflow: hidden;
+  border-radius: 3px;
+}
+.image-background:hover {
+  background-color: #000;
+}
+
+.image-background:hover .gallery-image {
+  transform: scale(1.1, 1.1);
+  transition: all 0.3s ease;
+  opacity: 0.15;
+  cursor: url(./pointer.png), pointer;
+}
+
+/* text over image */
+.image-text {
+  opacity: 0;
+  transition: opacity 0.2s 0.3s ease;
+  color: #fff;
+  position: absolute;
+  bottom: 200px;
+  left: 0;
+  right: 0;
+  text-align: center;
+}
+
+.image-text h3 {
+  font-size: 13px;
+  margin: 0 0 3px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: #e3e3e3;
+  font-weight: 400;
+}
+
+.image-text p {
+  font-size: 11px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #aeaeae;
+  font-weight: 400;
+  margin-bottom: 0;
+}
+
+.image-wrapper:hover .image-text {
+  opacity: 1;
 }
 
 @media only screen and (min-width: 1400px) {
-    .image-wrapper {
-        width: 50%;
-        display: inline-block;
-    }
+  .image-wrapper {
+    width: 50%;
+    display: inline-block;
+  }
+  .gallery-image {
+    min-height: 500px;
+  }
 }
 
 @media only screen and (min-width: 774px) {
-    .image-wrapper-inner {
-       padding: 8px;
-    }
-    .gallery-image {
-        border-radius: 3px;
-    }
+  .image-wrapper-inner {
+    padding: 8px;
+  }
+  .gallery-image {
+    border-radius: 3px;
+    opacity: 1;
+  }
 }
-
