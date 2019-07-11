@@ -1,5 +1,6 @@
 import React, { Fragment } from "react"
 import GalleryItem from "./GalleryItem"
+
 export default function GalleryItems({ images }) {
   return (
     <Fragment>

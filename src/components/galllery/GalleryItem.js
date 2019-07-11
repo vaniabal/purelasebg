@@ -2,21 +2,22 @@ import React from "react"
 import Img from "gatsby-image"
 
 import "./GalleryItem.css"
-
-const imageText = {
-  "img-1.jpeg": "awesome prizza",
-  "img-2.jpeg": "awesome pork",
-  "img-3.jpeg": "awesome steak",
-}
+import Link from "./Links"
 
 export default function GalleryItem({ index, node }) {
   return (
     <div className="image-wrapper">
       <div className="image-wrapper-inner">
-        <Img fluid={node.childImageSharp.fluid} className="gallery-image" />
-        <p className="info">
-          {imageText[node.childImageSharp.fluid.originalName]}
-        </p>
+        <a
+          className="image-background"
+          href={Link[node.childImageSharp.fluid.originalName]}
+        >
+          <Img fluid={node.childImageSharp.fluid} className="gallery-image" />
+        </a>
+      </div>
+      <div className="image-text">
+        <h3>разгледай</h3>
+        <p>в instagram</p>
       </div>
     </div>
   )

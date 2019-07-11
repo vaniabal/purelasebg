@@ -1,8 +1,14 @@
-
 @media only screen and (min-width: 774px) {
-    .gallery-container {
-        width: 95%;
-        margin: 0 auto;
-        max-width: 1800px;
-    }
+  .gallery-container {
+    width: 95%;
+    margin: 0 auto;
+    max-width: 1800px;
+  }
+}
+
+.gallery-wrapper {
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: auto;
+  grid-row-gap: 1rem;
 }
