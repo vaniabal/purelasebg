@@ -5,53 +5,56 @@
 
 .faq-container {
   width: 100%;
+  padding: 1em;
 }
+
 @media only screen and (min-width: 774px) {
   .faq-container {
+    padding: 0;
     margin: 0 auto;
     max-width: 800px;
   }
 }
 
-.card {
-  margin-bottom: 10px;
-}
-.card-header {
-  border-radius: 3px;
-  -webkit-box-shadow: none;
-  box-shadow: none;
-  border-color: #ddd;
-  background-color: #fff;
-  border-bottom: none;
-  padding-bottom: 10px;
+.accordeon-item {
+  border-bottom: 1px solid #e0e1eb;
 }
 
-.card-header h4 {
-  font-size: 16px;
-  padding-top: 5px;
+.accordeon-title {
+  font-size: 19px;
+  margin: 0;
+  position: relative;
+  line-height: 1.5em;
+  cursor: pointer;
 }
 
-.card-header a {
-  display: block;
-  color: #777;
+.accordeon-title:hover {
+  color: var(--secondary);
 }
 
-.card-body {
-  padding: 30px;
-  line-height: 1.6 !important;
-  border-top: 1px solid #ddd;
-  transition: max-height 0.35s;
+.accordeon-title-inner {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 1em 0;
+  color: inherit;
+}
+
+.accordition-content {
+  overflow: hidden;
 }
 
 /* Question and icons  */
 .active-title {
   color: var(--secondary);
+  font-weight: 600;
+}
+
+.question-icon {
+  font-size: 1.5rem;
 }
 
 .remove-icon {
+  font-size: 1.5rem;
   fill: var(--secondary);
-}
-
-.question-title {
-  cursor: pointer;
 }
