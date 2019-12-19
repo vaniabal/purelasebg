@@ -1,35 +1,55 @@
-import React, { useState } from "react"
+import React from "react"
 import uniqid from "uniqid"
-import { MdAddCircleOutline, MdRemoveCircleOutline } from "react-icons/md"
+import posed from "react-pose"
 
-export default function QuestionItem({ question, answer, i }) {
-  const initialShow = i === 0 ? true : false
-  const [showAnswer, setShowAnswer] = useState(initialShow)
+import { MdExpandMore, MdExpandLess } from "react-icons/md"
 
+const AccorditionContent = posed.div({
+  closed: { height: 0 },
+  open: { height: "auto" },
+})
+
+export default function QuestionItem({
+  question,
+  answer,
+  openQuestion,
+  position,
+  toggleQuestion,
+}) {
+  const showAnswer = openQuestion === position
   return (
-    <div className="card">
-      <div className="card-header">
+    <div className="accordeon-item">
+      <div>
         <h4
-          className={`question-title d-flex justify-content-between ${showAnswer &&
+          className={`accordeon-title d-flex justify-content-between ${showAnswer &&
             "active-title"}`}
-          onClick={() => setShowAnswer(!showAnswer)}
+          onClick={() => toggleQuestion(position)}
         >
-          {question.question}
-          {showAnswer ? (
-            <MdRemoveCircleOutline className="remove-icon" />
-          ) : (
-            <MdAddCircleOutline />
-          )}
+          <div className="accordeon-title-inner">
+            {question.question}
+            {showAnswer ? (
+              <MdExpandLess className="question-icon remove-icon" />
+            ) : (
+              <MdExpandMore className="question-icon" />
+            )}
+          </div>
         </h4>
       </div>
-      {showAnswer && (
-        <div className={`card-body`}>
+      <AccorditionContent
+        className="accordition-content"
+        pose={showAnswer ? "open" : "closed"}
+      >
+        <div className={`accordition-content`}>
           {answer.map((item, i) => {
             const id = uniqid()
-            return <p key={id}>{item}</p>
+            return (
+              <p style={{ padding: "0.5em 0" }} key={id}>
+                {item}
+              </p>
+            )
           })}
         </div>
-      )}
+      </AccorditionContent>
     </div>
   )
 }

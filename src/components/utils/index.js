@@ -1,3 +1,3 @@
-import Title from './title'
-
-export { Title }
+import Title from "./title"
+import sortServices from "./sortServices"
+export { Title, sortServices }
