@@ -9,6 +9,7 @@ const SERVICES = graphql`
           id
           name
           price
+          servicePosition
         }
       }
     }
