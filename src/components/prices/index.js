@@ -1,6 +1,9 @@
 import React from "react"
 import { StaticQuery, graphql } from "gatsby"
 import Services from "./services"
+
+import "./prices.css"
+
 const SERVICES = graphql`
   {
     services: allContentfulService {
@@ -17,11 +20,9 @@ const SERVICES = graphql`
 `
 export default function Prices() {
   return (
-    <div>
-      <StaticQuery
-        query={SERVICES}
-        render={({ services: { edges } }) => <Services services={edges} />}
-      />
-    </div>
+    <StaticQuery
+      query={SERVICES}
+      render={({ services: { edges } }) => <Services services={edges} />}
+    />
   )
 }

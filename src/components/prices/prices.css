@@ -1,0 +1,73 @@
+/* all services */
+.services-container {
+  margin: 0.5em;
+  border-radius: 15px;
+  padding-bottom: 1em;
+}
+
+.services,
+.selected-services {
+  list-style-type: none;
+  margin: 1.5em;
+  padding-inline-start: 0;
+}
+
+.services-header {
+  display: flex;
+  padding: 25px 0;
+  border-bottom: 2px solid white;
+  text-transform: uppercase;
+}
+
+/* service price line */
+
+.service-wrapper,
+.selected-service-wrapper {
+  display: flex;
+  font-weight: 100;
+  padding: 15px 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.service-icon-wrapper {
+  padding: 5px;
+  cursor: pointer;
+}
+.service-icon {
+  height: 1.3em;
+  width: 1.3em;
+}
+
+/* selected services */
+
+.selected-services-container {
+  position: fixed;
+  border-radius: 15px;
+  bottom: 150px;
+  left: 25%;
+  right: 5%;
+  background-color: white;
+}
+
+.selected-services-title,
+.selected-services-total {
+  border-bottom: 2px solid black;
+  padding: 15px 0;
+  margin: 0 10px;
+  text-align: center;
+  font-size: 1.3em;
+  text-transform: uppercase;
+}
+
+.selected-service-wrapper {
+  padding: 10px 0;
+  font-size: 0.9em;
+}
+
+.selected-services {
+  margin: 0 1em;
+}
+
+.selected-services-total {
+  border: none;
+}
