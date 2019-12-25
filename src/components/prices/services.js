@@ -1,12 +1,20 @@
 import React, { Component } from "react"
-import { MdAddCircleOutline } from "react-icons/md"
+import posed, { PoseGroup } from "react-pose"
+
+import { MdAdd } from "react-icons/md"
 
 import { Title, sortServices } from "../utils"
 import SelectedServices from "./selectedServices"
 
+const SelectedServicesModal = posed.div({
+  enter: { opacity: 1 },
+  exit: { opacity: 0 },
+})
+
 class services extends Component {
   state = {
     selectedServices: [],
+    isVisibleSelected: false,
   }
 
   handleAddService = service => {
@@ -38,18 +46,18 @@ class services extends Component {
     return services.map(({ name, price, id, servicePosition }) => {
       const service = { name, price, id, servicePosition }
       return (
-        <tr key={id}>
-          <th className="py-1 text-capitalize" scope="row">
-            {name}
-          </th>
-          <td className="py-1">{price} лв</td>
-          <td className="py-1">
-            <MdAddCircleOutline
-              style={{ height: "1.3em", width: "1.3em" }}
+        <li key={id} className="service-wrapper">
+          <span className="col-7 text-capitalize pl-1">{name}</span>
+          <span className="col-3">{price} лв</span>
+          <span className="col-2 pr-1">
+            <span
+              className="service-icon-wrapper"
               onClick={() => this.handleAddService(service)}
-            />
-          </td>
-        </tr>
+            >
+              <MdAdd className="service-icon" />
+            </span>
+          </span>
+        </li>
       )
     })
   }
@@ -57,30 +65,32 @@ class services extends Component {
   render() {
     const { selectedServices } = this.state
     return (
-      <div>
+      <div style={{ position: "relative" }}>
         <Title title="Haшите Цени" subtitle="Еднакви цени за жени и мъже!" />
-        <div className="inverse">
-          <table
-            className="table table-borderless table-dark"
-            style={{ background: "#000" }}
-          >
-            <thead>
-              <tr>
-                <th scope="col">Услуга</th>
-                <th scope="col">Цена</th>
-                <th scope="col">Добави</th>
-              </tr>
-            </thead>
-            <tbody>{this.renderServices()}</tbody>
-          </table>
-
-          {selectedServices.length ? (
-            <SelectedServices
-              services={selectedServices}
-              handleRemoveService={this.handleRemoveService}
-            />
-          ) : null}
+        <div className="inverse services-container">
+          <ul className="services">
+            <li className="services-header">
+              <span className="col-7 pl-1">Услуга</span>
+              <span className="col-3">Цена</span>
+              <span className="col-2 pr-1">
+                <span style={{ padding: "5px" }}>
+                  <MdAdd className="service-icon" />
+                </span>
+              </span>
+            </li>
+            {this.props.services.length && this.renderServices()}
+          </ul>
         </div>
+        <PoseGroup>
+          {selectedServices.length ? (
+            <SelectedServicesModal key="selectedservicemodal">
+              <SelectedServices
+                services={selectedServices}
+                handleRemoveService={this.handleRemoveService}
+              />
+            </SelectedServicesModal>
+          ) : null}
+        </PoseGroup>
       </div>
     )
   }
