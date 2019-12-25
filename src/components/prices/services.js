@@ -1,12 +1,20 @@
 import React, { Component } from "react"
+import posed, { PoseGroup } from "react-pose"
+
 import { MdAdd } from "react-icons/md"
 
 import { Title, sortServices } from "../utils"
 import SelectedServices from "./selectedServices"
 
+const SelectedServicesModal = posed.div({
+  enter: { opacity: 1 },
+  exit: { opacity: 0 },
+})
+
 class services extends Component {
   state = {
     selectedServices: [],
+    isVisibleSelected: false,
   }
 
   handleAddService = service => {
@@ -73,12 +81,16 @@ class services extends Component {
             {this.props.services.length && this.renderServices()}
           </ul>
         </div>
-        {selectedServices.length ? (
-          <SelectedServices
-            services={selectedServices}
-            handleRemoveService={this.handleRemoveService}
-          />
-        ) : null}
+        <PoseGroup>
+          {selectedServices.length ? (
+            <SelectedServicesModal key="selectedservicemodal">
+              <SelectedServices
+                services={selectedServices}
+                handleRemoveService={this.handleRemoveService}
+              />
+            </SelectedServicesModal>
+          ) : null}
+        </PoseGroup>
       </div>
     )
   }
